@@ -1,3 +1,4 @@
+using fristMVCBLL.repositories;
 using fristMVCDAL.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,9 @@ namespace fristMVCPrject
             {
                 options.UseSqlServer(Configuration.GetConnectionString("default"));
             });
+
+
+            services.AddScoped<DepartmentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
