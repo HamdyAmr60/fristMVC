@@ -18,5 +18,7 @@ namespace fristMVCDAL.Models
         [Display(Name ="Date Of Creation")]
         [Required(ErrorMessage = "Date Is Required")]
         public DateTime DateOfCreation { get; set; }
+
+        public ICollection<Employee> Employees { get; set; }
     }
 }

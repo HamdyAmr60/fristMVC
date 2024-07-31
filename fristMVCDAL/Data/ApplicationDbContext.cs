@@ -19,9 +19,15 @@ namespace fristMVCDAL.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Employee>()
+       .HasOne(e => e.Department)
+       .WithMany(d => d.Employees)
+       .HasForeignKey(e => e.DepartmentId)
+       .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

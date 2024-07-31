@@ -30,7 +30,7 @@ namespace fristMVCBLL.repositories
             return _context.SaveChanges();
         }
 
-        public Department Get(int id)
+        public Department Get(int? id)
         {
             var result = _context.Departments.Find(id);
             return result;
@@ -43,8 +43,9 @@ namespace fristMVCBLL.repositories
 
         public int Update(Department department)
         {
-            _context.Departments.Update(department);
-            return _context.SaveChanges();
+                _context.Departments.Update(department);
+                return _context.SaveChanges();
+         
         }
     }
 }

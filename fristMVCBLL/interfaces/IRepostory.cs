@@ -10,7 +10,7 @@ namespace fristMVCBLL.interfaces
     internal interface IRepostory<T>
     {
         IEnumerable<T> GetAll();
-        T Get(int id);
+        T Get(int? id);
         int Add(T department);
         int Update(T department);
         int Delete(T department);
